@@ -68,18 +68,6 @@ cave_graph_t init_caves(const char *input_file_name) {
         edge->second = edges[1];
         list_push_back(graph.edges, edge);
     }
-    // printf_set_color(GREEN);
-    // for (int i = 0; i < list_size(graph.caves); i++) {
-    // char *cave = list_at(graph.caves, i);
-    // printf("%s\n", cave);
-    // }
-    //
-    // printf_set_color(RED);
-    //
-    // for (int i = 0; i < graph.edges->size; i++) {
-    // cave_edge_t *edge = list_at(graph.edges, i);
-    // printf("%s <-> %s\n", edge->first, edge->second);
-    // }
 
     for (int i = 0; i < line_count; i++) {
         free(lines[i]);
@@ -105,10 +93,17 @@ void deinit_caves(cave_graph_t graph) {
     printf_set_color(WHITE);
 }
 
-int graph_traverse(cave_graph_t graph, list_t *visited, char *current, char *prev) {
-    // printf("%s\n", current);
+int graph_traverse(cave_graph_t graph, list_t *visited, char *current, char *prev, int twice) {
     if (list_find_str(visited, current, 0) && !cave_is_big(current)) {
-        return 0;
+        if(strcmp("start",current) == 0){
+            return 0;
+        }
+        if(!twice){
+            twice++;
+        }
+        else{
+            return 0;
+        }
     }
     if (strcmp(current, "end") == 0) {
         return 1;
@@ -120,13 +115,12 @@ int graph_traverse(cave_graph_t graph, list_t *visited, char *current, char *pre
 			char *next = list_at(cons,i);
 
             list_t *copy = list_copy(visited);
-            if (graph_traverse(graph, copy, next,current)) {
+            if (graph_traverse(graph, copy, next,current,twice)) {
+                list_free(copy);
                 accum++;
-                printf_set_color(GREEN);
-                list_print_str(visited);
-                printf_set_color(WHITE);
             }
         }
+        list_free(cons);
     }
 	return 0;
 }
@@ -138,7 +132,7 @@ int main(int argc, char **argv) {
 
     list_t *visited = list_create();
 
-    graph_traverse(graph, visited, "start", NULL);
+    graph_traverse(graph, visited, "start", NULL, 0);
 
     printf("%d\n", accum);
     deinit_caves(graph);
