@@ -1,0 +1,3 @@
+/home/lumi/Code/aoc2021/build/CMakeFiles/rebuild_cache.dir
+/home/lumi/Code/aoc2021/build/CMakeFiles/edit_cache.dir
+/home/lumi/Code/aoc2021/build/CMakeFiles/aoc.dir

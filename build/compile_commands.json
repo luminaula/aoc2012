@@ -1,0 +1,62 @@
+[
+{
+  "directory": "/home/lumi/Code/aoc2021/build",
+  "command": "/bin/x86_64-redhat-linux-gcc-11   -g -o CMakeFiles/aoc.dir/1.o -c /home/lumi/Code/aoc2021/1.c",
+  "file": "/home/lumi/Code/aoc2021/1.c"
+},
+{
+  "directory": "/home/lumi/Code/aoc2021/build",
+  "command": "/bin/x86_64-redhat-linux-gcc-11   -g -o CMakeFiles/aoc.dir/10.o -c /home/lumi/Code/aoc2021/10.c",
+  "file": "/home/lumi/Code/aoc2021/10.c"
+},
+{
+  "directory": "/home/lumi/Code/aoc2021/build",
+  "command": "/bin/x86_64-redhat-linux-gcc-11   -g -o CMakeFiles/aoc.dir/11.o -c /home/lumi/Code/aoc2021/11.c",
+  "file": "/home/lumi/Code/aoc2021/11.c"
+},
+{
+  "directory": "/home/lumi/Code/aoc2021/build",
+  "command": "/bin/x86_64-redhat-linux-gcc-11   -g -o CMakeFiles/aoc.dir/12.o -c /home/lumi/Code/aoc2021/12.c",
+  "file": "/home/lumi/Code/aoc2021/12.c"
+},
+{
+  "directory": "/home/lumi/Code/aoc2021/build",
+  "command": "/bin/x86_64-redhat-linux-gcc-11   -g -o CMakeFiles/aoc.dir/2.o -c /home/lumi/Code/aoc2021/2.c",
+  "file": "/home/lumi/Code/aoc2021/2.c"
+},
+{
+  "directory": "/home/lumi/Code/aoc2021/build",
+  "command": "/bin/x86_64-redhat-linux-gcc-11   -g -o CMakeFiles/aoc.dir/3.o -c /home/lumi/Code/aoc2021/3.c",
+  "file": "/home/lumi/Code/aoc2021/3.c"
+},
+{
+  "directory": "/home/lumi/Code/aoc2021/build",
+  "command": "/bin/x86_64-redhat-linux-gcc-11   -g -o CMakeFiles/aoc.dir/5.o -c /home/lumi/Code/aoc2021/5.c",
+  "file": "/home/lumi/Code/aoc2021/5.c"
+},
+{
+  "directory": "/home/lumi/Code/aoc2021/build",
+  "command": "/bin/x86_64-redhat-linux-gcc-11   -g -o CMakeFiles/aoc.dir/6.o -c /home/lumi/Code/aoc2021/6.c",
+  "file": "/home/lumi/Code/aoc2021/6.c"
+},
+{
+  "directory": "/home/lumi/Code/aoc2021/build",
+  "command": "/bin/x86_64-redhat-linux-gcc-11   -g -o CMakeFiles/aoc.dir/7.o -c /home/lumi/Code/aoc2021/7.c",
+  "file": "/home/lumi/Code/aoc2021/7.c"
+},
+{
+  "directory": "/home/lumi/Code/aoc2021/build",
+  "command": "/bin/x86_64-redhat-linux-gcc-11   -g -o CMakeFiles/aoc.dir/8.o -c /home/lumi/Code/aoc2021/8.c",
+  "file": "/home/lumi/Code/aoc2021/8.c"
+},
+{
+  "directory": "/home/lumi/Code/aoc2021/build",
+  "command": "/bin/x86_64-redhat-linux-gcc-11   -g -o CMakeFiles/aoc.dir/9.o -c /home/lumi/Code/aoc2021/9.c",
+  "file": "/home/lumi/Code/aoc2021/9.c"
+},
+{
+  "directory": "/home/lumi/Code/aoc2021/build",
+  "command": "/bin/x86_64-redhat-linux-gcc-11   -g -o CMakeFiles/aoc.dir/utils.o -c /home/lumi/Code/aoc2021/utils.c",
+  "file": "/home/lumi/Code/aoc2021/utils.c"
+}
+]
