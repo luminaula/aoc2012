@@ -106,7 +106,7 @@ void origami(const char *file_name) {
         }
         point_count++;
     }
-    point_array = realloc(point_array, sizeof(point_t) * point_count);
+    point_array = realloc(point_array, sizeof(point_t) * point_count +1);
 
     int width = 0, height = 0;
 
