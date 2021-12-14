@@ -93,7 +93,7 @@ void deinit_caves(cave_graph_t graph) {
     printf_set_color(WHITE);
 }
 
-int graph_traverse(cave_graph_t graph, list_t *visited, char *current, char *prev, int twice) {
+int graph_traverse(cave_graph_t graph, list_t *visited, char *current, int twice) {
     if (list_find_str(visited, current, 0) && !cave_is_big(current)) {
         if(strcmp("start",current) == 0){
             return 0;
@@ -115,9 +115,13 @@ int graph_traverse(cave_graph_t graph, list_t *visited, char *current, char *pre
 			char *next = list_at(cons,i);
 
             list_t *copy = list_copy(visited);
-            if (graph_traverse(graph, copy, next,current,twice)) {
+            if (graph_traverse(graph, copy, next,twice)) {
                 list_free(copy);
                 accum++;
+            }
+            else{
+                // why u crash?
+                // list_free(copy);
             }
         }
         list_free(cons);
@@ -132,7 +136,7 @@ int main(int argc, char **argv) {
 
     list_t *visited = list_create();
 
-    graph_traverse(graph, visited, "start", NULL, 0);
+    graph_traverse(graph, visited, "start",0);
 
     printf("%d\n", accum);
     deinit_caves(graph);

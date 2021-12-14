@@ -229,21 +229,27 @@ char **split_input(char *input, size_t *count, char delimiter) {
     char *begin = input;
     int capacity = 512;
     char **lines = malloc(capacity * sizeof(char **));
-    *count = 0;
+    size_t _count = 0;
 
     while (*input++) {
         if (*input == delimiter || *input == '\0') {
-            if (capacity == *count) {
+            
+            if (capacity == _count) {
                 capacity *= 2;
                 lines = realloc(lines, sizeof(char *) * capacity);
             }
             size_t len = input - begin;
-            lines[*count] = calloc(len + 1, sizeof(char));
-            memcpy(lines[*count], begin, len * sizeof(char));
-            *count += 1;
-            *input++;
+            lines[_count] = calloc(len + 1, sizeof(char));
+            memcpy(lines[_count], begin, len * sizeof(char));
+            _count += 1;
+            while(*input == delimiter){
+                input++;
+            }
             begin = input;
         }
+    }
+    if(count){
+        *count = _count;
     }
     return lines;
 }
