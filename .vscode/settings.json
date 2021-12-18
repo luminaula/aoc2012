@@ -1,9 +1,0 @@
-{
-	"files.associations": {
-		"string.h": "c",
-		"iosfwd": "cpp",
-		"*.tcc": "c",
-		"istream": "c",
-		"streambuf": "c"
-	}
-}
