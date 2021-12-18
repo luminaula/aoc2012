@@ -7,6 +7,9 @@
 
 #include <stdlib.h>
 
+#define MAX(a, b) (a > b ? a : b)
+#define MIN(a, b) (a < b ? a : b)
+
 
 enum printf_colors { BLACK = 0, RED = 1, GREEN = 2, YELLOW = 3, BLUE = 4, PURPLE = 5, CYAN = 6, WHITE = 7 };
 
@@ -28,9 +31,10 @@ typedef struct stack_node_t {
     void *data;
 } stack_node_t;
 
-typedef struct stack_t {
+typedef struct stack_t { //change to obstack
     struct stack_node_t *top;
     size_t size;
+    size_t elem_size;
 } stack_t;
 
 // classes in C...?

@@ -179,7 +179,7 @@ void stack_free(stack_t *stack) {
 }
 
 void stack_push(stack_t *stack, void *data) {
-    stack_node_t *node = calloc(1, sizeof(node));
+    stack_node_t *node = calloc(1, sizeof(stack_node_t));
     node->data = data;
     stack->size++;
     node->prev = stack->top;
@@ -216,6 +216,10 @@ void stack_print(stack_t *stack) {
 char *read_input(const char *filename, size_t *file_size) {
     *file_size = 0;
     FILE *input_file = fopen(filename, "r");
+    if(input_file == NULL){
+        printf("input file %s not found\n",filename);
+        return NULL;
+    }
     fseek(input_file, 0, SEEK_END);
     *file_size = ftell(input_file);
     fseek(input_file, 0, SEEK_SET);
@@ -227,7 +231,7 @@ char *read_input(const char *filename, size_t *file_size) {
 
 char **split_input(char *input, size_t *count, char delimiter) {
     char *begin = input;
-    int capacity = 512;
+    int capacity = 1;
     char **lines = malloc(capacity * sizeof(char **));
     size_t _count = 0;
 
@@ -242,7 +246,7 @@ char **split_input(char *input, size_t *count, char delimiter) {
             lines[_count] = calloc(len + 1, sizeof(char));
             memcpy(lines[_count], begin, len * sizeof(char));
             _count += 1;
-            while(*input == delimiter){
+            while(*input == delimiter && *input != 0){
                 input++;
             }
             begin = input;
@@ -251,6 +255,7 @@ char **split_input(char *input, size_t *count, char delimiter) {
     if(count){
         *count = _count;
     }
+    lines = realloc(lines,_count*sizeof(char*));
     return lines;
 }
 
