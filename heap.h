@@ -18,4 +18,5 @@ heap_t *heap_create(int (*comparator)(const void *, const void *),size_t elem_si
 void heap_insert(heap_t *heap, void *data);
 void *heap_extract(heap_t *heap);
 
+
 #endif //HEAP_H
